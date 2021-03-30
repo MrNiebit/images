@@ -270,9 +270,9 @@ layui.use(['form', 'table', 'upload', 'isLogin'], function() {
                     body.find('input[name="host"]').val(data.host);
                     body.find('input[name="port"]').val(data.port);
                     body.find('input[name="username"]').val(data.username);
-                    body.find('input[name="password"]').val(data.password);
+                   // body.find('input[name="password"]').val(data.password);
                     body.find('input[name="rsaKeyPath"]').val(data.rsaKeyPath);
-                    body.find('input[name="rsaPassword"]').val(data.rsaPassword);
+                    // body.find('input[name="rsaPassword"]').val(data.rsaPassword);
                     var node = body.find('input[name="isUseRsa"]');
                     if (data.isUseRsa == 1) {
                         node.attr('checked', 'checked');
