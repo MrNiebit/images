@@ -5,8 +5,8 @@ layui.define([
     'use strict';
 
     var $ = layui.jquery;
-    var baseUrl = 'http://127.0.0.1:8989/api'
-    // var baseUrl = 'http://aynu.lacknb.cn/api'
+    // var baseUrl = 'http://127.0.0.1:8989/api'
+    var baseUrl = 'http://aynu.lacknb.cn/api'
 
     ! function() {
         // var userinfo = layui.data('user_info');
