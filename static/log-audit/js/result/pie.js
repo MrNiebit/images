@@ -7,7 +7,6 @@ layui.use(['layer', 'echarts', 'form', 'laydate', 'isLogin'], () => {
 
 
 
-
     /**
      * 日期选择。
      */
@@ -67,7 +66,7 @@ layui.use(['layer', 'echarts', 'form', 'laydate', 'isLogin'], () => {
     });
 
     $.ajax({
-        url: '/host/getHostIps',
+        url: '/user/getUsers',
         method: 'get',
         headers: {
             "Authorization": localStorage.access_token
@@ -76,7 +75,7 @@ layui.use(['layer', 'echarts', 'form', 'laydate', 'isLogin'], () => {
         success: res => {
             if (res.code === 200) {
                 if (res.data.length == 0) {
-                    layer.msg('主机列表为空', {
+                    layer.msg('违规用户为空', {
                         icon: 2,
                         time: 1000
                     })
@@ -98,7 +97,6 @@ layui.use(['layer', 'echarts', 'form', 'laydate', 'isLogin'], () => {
             }
         }
     })
-
 
 
     /**
@@ -179,7 +177,7 @@ layui.use(['layer', 'echarts', 'form', 'laydate', 'isLogin'], () => {
 
     var requestEchartData = function(field) {
         $.ajax({
-            url: '/round-audit/ipRegionData',
+            url: '/log/pieData',
             method: 'POST',
             data: JSON.stringify(field),
             headers: {
@@ -201,7 +199,7 @@ layui.use(['layer', 'echarts', 'form', 'laydate', 'isLogin'], () => {
         });
     };
 
-    var echartDataInit = function(field) {
+    var echartDataInit = function() {
         $('#pie-submit').click();
     };
 
@@ -222,7 +220,7 @@ layui.use(['layer', 'echarts', 'form', 'laydate', 'isLogin'], () => {
     //     d[this.name] = this.value;
     // });
     // var field = JSON.stringify(d);
-    echartDataInit();
+    echartDataInit()
 
 
 });
