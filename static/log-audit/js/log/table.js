@@ -86,58 +86,18 @@ layui.use(['form', 'table', 'laydate', 'isLogin'], function() {
      */
 
     var start = laydate.render({
-        elem: '#startTime',
-        type: 'datetime',
-        value: new Date(new Date().setMonth(new Date().getMonth() - 1)),
-        showBottom: true,
-        theme: 'default',
-        calendar: true,
-        btns: ['confirm'], // clear, now, confirm            
-        min: '1900-1-1 00:00:00',
-        done: (value, date, endDate) => {
-            end.config.min = {
-                year: date.year,
-                month: date.month - 1,
-                date: date.date,
-                hours: date.hours,
-                minutes: date.minutes,
-                seconds: date.seconds
-            }; //开始日选好后，重置结束日的最小日期
-            end.config.value = {
-                year: date.year,
-                month: date.month - 1,
-                date: date.date,
-                hours: date.hours,
-                minutes: date.minutes,
-                seconds: date.seconds
-            }; //将结束日的初始值设定为开始日
-
-        }
-
-    });
-
-
-    var end = laydate.render({
-        elem: '#endTime',
-        type: 'datetime',
+        elem: '#date',
+        type: 'month',
         value: new Date(),
         showBottom: true,
         theme: 'default',
         calendar: true,
-        btns: ['now', 'confirm'],
-        min: $('#startTime').val(),
-        max: new Date() + 1,
-        done: (value, date, endDate) => {
-            start.config.max = {
-                year: date.year,
-                month: date.month - 1,
-                date: date.date,
-                hours: date.hours,
-                minutes: date.minutes,
-                seconds: date.seconds
-            }; //结束日选好后，重置开始日的最大日期
-        }
+        btns: ['confirm'], // clear, now, confirm            
+        // max: $('#endTime').val(),
+
     });
+
+
 
 
 
