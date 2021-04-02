@@ -1,5 +1,5 @@
 layui.use(['jquery', 'isLogin', 'layer'], function() {
-
+	// hello test jsdelivr cdn
     var $ = layui.jquery,
         layer = layui.layer;
 
