@@ -21,15 +21,14 @@ layui.use(['jquery', 'isLogin', 'layer'], function() {
         if (oDay.length <= 1) oDay = '0' + oDay;
         return oYear + str + oMoth + str + oDay;
     };
-    var fields = {};
-    fields.startTime = getDay(-1, '-') + ' 00:00:00';
-    fields.endTime = getDay(-1, '-') + ' 23:59:59';
-    fields.type = 0;
+    // var fields = {};
+    // fields.startTime = getDay(-1, '-') + ' 00:00:00';
+    // fields.endTime = getDay(-1, '-') + ' 23:59:59';
+    // fields.type = 0;
     // 请求数据
     $.ajax({
-        url: '/log/auditLogs',
-        method: 'POST',
-        data: fields,
+        url: '/log/yesterdayAbnormalLog',
+        method: 'GET',
         async: false,
         success: res => {
             $('#box').html('');
